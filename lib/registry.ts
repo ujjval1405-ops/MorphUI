@@ -1,8 +1,14 @@
 // lib/registry.ts
+import InteractiveSlider from '@/components/InteractiveSlider';
+import SuccessNotice from '@/components/SuccessNotice';
 
-export type AllowedComponent =
-  | "InteractiveSlider"
-  | "SuccessNotice";
+// This map tells our app which code files belong to which "names"
+export const COMPONENT_MAP = {
+  InteractiveSlider,
+  SuccessNotice,
+};
+
+export type AllowedComponent = keyof typeof COMPONENT_MAP;
 
 export interface UIBlock {
   component: AllowedComponent;
